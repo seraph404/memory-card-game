@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Card from "./Card.jsx";
 
 const POKEMON_LIST = [
   "sandshrew",
@@ -35,13 +36,19 @@ function GameBoard() {
     fetchPokemon();
   }, []);
 
+  function handleCardClick(id) {
+    console.log("hi");
+  }
+
   return (
-    <div>
+    <div className="gameboard">
       {pokemonData.map((pokemon) => (
-        <div key={pokemon.id}>
-          <img src={pokemon.image} />
-          <div>{pokemon.name}</div>
-        </div>
+        <Card
+          key={pokemon.id}
+          name={pokemon.name}
+          image={pokemon.image}
+          onClick={() => handleCardClick(pokemon.id)}
+        />
       ))}
     </div>
   );
