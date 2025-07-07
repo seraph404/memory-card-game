@@ -1,6 +1,6 @@
-function Card({ id, name, image }) {
+function Card({ id, name, image, onClick }) {
   return (
-    <div className="card" key={id}>
+    <div className="card" onClick={onClick}>
       <img src={image} />
       <div>{name}</div>
     </div>
