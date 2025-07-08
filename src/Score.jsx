@@ -1,6 +1,6 @@
 function Score({ currentScore, highScore }) {
   return (
-    <div>
+    <div className="score">
       <div>
         <span>Score: </span>
         <span>{currentScore}</span>
